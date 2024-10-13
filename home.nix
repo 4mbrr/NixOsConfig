@@ -49,6 +49,7 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".config/foot/foot.ini".source = ./foot.ini;
   };
 
   # Home Manager can also manage your environment variables through
@@ -80,5 +81,6 @@
     userEmail = "uhjk5476@gmail.com";
   };
 
-  programs.foot.settings = dotfiles/foot.ini;
+  #programs.foot.settings = dotfiles/foot.ini;
+  
 }
