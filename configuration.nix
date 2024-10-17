@@ -137,8 +137,8 @@ environment.gnome.excludePackages = (with pkgs; [
   wget
   git
   curl
-  home-manager
   # applications
+  river
   ungoogled-chromium
   vscode
   foot

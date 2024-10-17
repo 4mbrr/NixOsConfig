@@ -5,7 +5,6 @@
   # manage.
   home.username = "amber";
   home.homeDirectory = "/home/amber";
-
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -50,6 +49,7 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
     ".config/foot/foot.ini".source = ./foot.ini;
+    #".config/river/init".source = ./init;
   };
 
   # Home Manager can also manage your environment variables through
@@ -74,6 +74,7 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  programs.home-manager.path = "$HOME/.config/home-manager";
 
   programs.git = {
     enable = true;
@@ -81,6 +82,5 @@
     userEmail = "uhjk5476@gmail.com";
   };
 
-  #programs.foot.settings = dotfiles/foot.ini;
   
 }
