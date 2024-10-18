@@ -1,10 +1,11 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
+  lib.mkForce = true;
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "amber";
-  home.homeDirectory = "/home/amber";
+  home.homeDirectory = lib.mkForce "/home/amber";
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -35,6 +36,7 @@
      '')
   ];
 
+  #home.file.foot
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
@@ -48,8 +50,9 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-    ".config/foot/foot.ini".source = ./foot.ini;
-    #".config/river/init".source = ./init;
+    
+    ".config/foot/foot.ini".source = ./foot/foot.ini;
+
   };
 
   # Home Manager can also manage your environment variables through
@@ -74,7 +77,7 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  programs.home-manager.path = "$HOME/.config/home-manager";
+  #programs.home-manager.path = "$HOME/dotfiles";
 
   programs.git = {
     enable = true;

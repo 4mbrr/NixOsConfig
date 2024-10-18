@@ -139,6 +139,10 @@ environment.gnome.excludePackages = (with pkgs; [
   curl
   # applications
   river
+  protonvpn-gui
+  protonmail-bridge
+  protonmail-desktop
+  libreoffice
   ungoogled-chromium
   vscode
   foot
