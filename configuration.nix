@@ -137,6 +137,9 @@ environment.gnome.excludePackages = (with pkgs; [
   wget
   git
   curl
+  tamsyn
+  kitty
+  wpgtk
   # applications
   river
   protonvpn-gui
