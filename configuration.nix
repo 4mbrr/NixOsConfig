@@ -136,6 +136,7 @@ environment.gnome.excludePackages = (with pkgs; [
   unzip
   wget
   git
+  git-credential-manager
   curl
   tamsyn
   kitty
