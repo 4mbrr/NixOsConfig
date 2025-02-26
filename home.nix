@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, options, ... }:
 
 {
   lib.mkForce = true;
@@ -14,6 +14,8 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
+
+  
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -39,7 +41,25 @@
      '')
   ];
 
-  #home.file.foot
+
+gtk = {
+ enable = true;
+    theme = {
+      name = "Breeze-Dark";
+      package = pkgs.libsForQt5.breeze-gtk;
+    };
+};
+
+##Fixed lutris?
+  qt = {
+    enable = true;
+    platformTheme.name = "gtk";
+    style = {
+      name = "gtk2";
+      package = pkgs.libsForQt5.breeze-qt5;
+    };
+  };
+
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
@@ -85,6 +105,8 @@
 
   programs.git = {
     enable = true;
+    userName  = "Amber";
+    userEmail = "uhjk5476@gmail.com";
     extraConfig = {
       credential.helper = "${
           pkgs.git.override { withLibsecret = true; }

@@ -39,29 +39,13 @@
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   services.blueman.enable = true;
 
-/*
-# KDE ######################################
-  # Enable the KDE Plasma Desktop Environment.
-  # services.displayManager.sddm.enable = true;
-  services.displayManager.sddm = {
-  enable = true;
-  theme = "catppuccin-mocha";
-  # package = pkgs.kdePackages.sddm;
-};
-  services.desktopManager.plasma6.enable = true;
 
-  #wayland-only fix for sddm
-  services.displayManager.sddm.wayland.enable = true;
-##################################################
-*/
 
-#GNOME########################################
 services = {
 	xserver.enable = true;
   xserver.displayManager.gdm.enable = true;
   xserver.desktopManager.gnome.enable = true;
-  #xsever.layout = "us";
-  #xsever.xkbVariant = "";
+  syncthing.enable = true;
 	};
 
 environment.gnome.excludePackages = (with pkgs; [
@@ -81,6 +65,7 @@ environment.gnome.excludePackages = (with pkgs; [
   iagno # go game
   hitori # sudoku game
   atomix # puzzle game
+  gnome-software
 ]);
 ##############################################
 
@@ -141,53 +126,33 @@ environment.gnome.excludePackages = (with pkgs; [
   tamsyn
   kitty
   wpgtk
+  flatpak
   # applications
   river
-  protonvpn-gui
-  protonmail-bridge
-  protonmail-desktop
-  libreoffice
   ungoogled-chromium
   vscode
   foot
+  tmux
   obsidian
   discord
   spotify
+  syncthing
   neovim
   gimp-with-plugins
-  # inkscape-with-extensions
-  # protonup-qt
+  anki
+  impression
+  menulibre #menu editor
   lutris
-  #parsec-bin
-  #godot_4
-  runelite
   syncthing
-  syncthingtray
-  #rclone
-  #rclone-browser
   gh
-  # Programming
-  postgresql
-  # rustup
   android-tools #Supernote Sideloading
-  #zulu  #Omnivore
-  #gradle #Omnivore
-  # theming and customization
-  #spicetify-cli
-  #catppuccin-sddm
+  libreoffice-qt6-fresh
+  hunspell #spellcheck
+  themechanger
   ];
 
-  #programs.steam.enable = true;
-  #programs.firefox.enable = true;
+  programs.steam.enable = true;
   #programs.kdeconnect.enable = true;
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
 
   # List services that you want to enable:
 
