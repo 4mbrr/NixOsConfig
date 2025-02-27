@@ -133,6 +133,8 @@ environment.gnome.excludePackages = (with pkgs; [
   vscode
   foot
   tmux
+  mpv
+  vlc
   obsidian
   discord
   spotify

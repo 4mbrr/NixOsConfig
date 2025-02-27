@@ -27,6 +27,7 @@
     pkgs.yt-dlp
     pkgs.youtube-tui
     pkgs.pywal
+    pkgs.wl-clipboard
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -36,8 +37,8 @@
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
-     (pkgs.writeShellScriptBin "sample" ''
-       echo hello
+     (pkgs.writeShellScriptBin "vgrab" ''
+      yt-dlp -o "%(title)s.%(ext)s" -f "bv*[height<=1080]+ba/b[height<=1920]" -P "~/Downloads" $1
      '')
   ];
 
@@ -50,13 +51,21 @@ gtk = {
     };
 };
 
-##Fixed lutris?
-  qt = {
+qt = {
+  enable = true;
+  platformTheme.name = "gtk";
+  style = {
+    name = "gtk2";
+    package = pkgs.libsForQt5.breeze-qt5;
+ };
+};
+
+  dconf = {
     enable = true;
-    platformTheme.name = "gtk";
-    style = {
-      name = "gtk2";
-      package = pkgs.libsForQt5.breeze-qt5;
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
     };
   };
 
@@ -76,6 +85,7 @@ gtk = {
     
     ".config/foot/foot.ini".source = ./foot/foot.ini;
     ".config/hypr/hyprland.conf".source = ./hypr/hyprland.conf;
+    ".config/nvim/init.lua".source = ./nvim/init.lua;
 
   };
 
