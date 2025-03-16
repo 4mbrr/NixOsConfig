@@ -140,9 +140,7 @@ environment.gnome.excludePackages = (with pkgs; [
   ];
 
   programs.steam.enable = true;
-  #programs.kdeconnect.enable = true;
-
-  # List services that you want to enable:
+  programs.kdeconnect.enable = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;

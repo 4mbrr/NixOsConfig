@@ -47,17 +47,17 @@
 gtk = {
  enable = true;
     theme = {
-      name = "Breeze-Dark";
-      package = pkgs.libsForQt5.breeze-gtk;
+      name = "colloid";
+      package = pkgs.colloid-gtk-theme;
     };
 };
 
 qt = {
   enable = true;
-  platformTheme.name = "gtk";
+  platformTheme.name = "gtk2";
   style = {
-    name = "gtk2";
-    package = pkgs.libsForQt5.breeze-qt5;
+    name = "colloid";
+    package = pkgs.colloid-gtk-theme;
  };
 };
 
