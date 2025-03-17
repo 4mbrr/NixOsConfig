@@ -47,8 +47,8 @@
 gtk = {
  enable = true;
     theme = {
-      name = "colloid";
-      package = pkgs.colloid-gtk-theme;
+      name = "rose-pine";
+      package = pkgs.rose-pine-gtk-theme;
     };
 };
 
@@ -56,8 +56,8 @@ qt = {
   enable = true;
   platformTheme.name = "gtk2";
   style = {
-    name = "colloid";
-    package = pkgs.colloid-gtk-theme;
+    name = "rose-pine";
+    package = pkgs.rose-pine-gtk-theme;
  };
 };
 
@@ -87,7 +87,8 @@ qt = {
     ".config/foot/foot.ini".source = ./foot/foot.ini;
     ".config/hypr/hyprland.conf".source = ./hypr/hyprland.conf;
     ".config/nvim/init.lua".source = ./nvim/init.lua;
-
+    ".config/ghostty/config".source = ./ghostty/config;
+    ".config/nvim/lua/plugins/rose-pine.lua".source = ./nvim/lua/plugins/rose-pine.lua;
   };
 
   # Home Manager can also manage your environment variables through

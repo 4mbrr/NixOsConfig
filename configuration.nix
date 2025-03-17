@@ -118,6 +118,7 @@ environment.gnome.excludePackages = (with pkgs; [
   ungoogled-chromium
   vscode
   foot
+  ghostty
   tmux
   mpv
   vlc
