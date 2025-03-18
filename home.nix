@@ -89,6 +89,10 @@ qt = {
     ".config/nvim/init.lua".source = ./nvim/init.lua;
     ".config/ghostty/config".source = ./ghostty/config;
     ".config/nvim/lua/plugins/rose-pine.lua".source = ./nvim/lua/plugins/rose-pine.lua;
+    ".config/tmux/tmux.conf".source = ./tmux/tmux.conf;
+    ".config/nvim/lua/config/lazy.lua".source = ./nvim/lua/config/lazy.lua;
+    ".config/nvim/lua/plugins/vim-tmux-navigator.lua".source = ./nvim/lua/plugins/vim-tmux-navigator.lua;
+    ".config/nvim/lua/plugins/telescope.lua".source = ./nvim/lua/plugins/telescope.lua;
   };
 
   # Home Manager can also manage your environment variables through
