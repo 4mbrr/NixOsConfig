@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
     imports =
@@ -86,6 +86,7 @@
       gimp-with-plugins
       anki
       impression
+      inputs.zen-browser.packages."${system}".specific
       menulibre #menu editor
       lutris
       syncthing
