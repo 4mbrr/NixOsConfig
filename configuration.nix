@@ -26,7 +26,13 @@
         xserver.enable = true;
         xserver.displayManager.gdm.enable = true;
         xserver.desktopManager.gnome.enable = true;
-        syncthing.enable = true;
+        syncthing = {
+            enable = true;
+            openDefaultPorts = true;
+            user = "amber";
+            dataDir = "/home/amber";  # default location for new folders
+            configDir = "/home/amber/.config/syncthing";
+          };
     };
 
     environment.gnome.excludePackages = (with pkgs; [
@@ -69,6 +75,9 @@
       kitty
       wpgtk
       flatpak
+      pkg-config
+      gtk4
+      glib
       # applications
       river
       ungoogled-chromium
