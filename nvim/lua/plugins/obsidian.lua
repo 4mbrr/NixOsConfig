@@ -23,13 +23,6 @@ return {
         name = "SyncedNotes",
         path = "~/SyncedNotes",
       },
-    daily_notes = {
-    -- Optional, if you keep daily notes in a separate directory.
-    folder = "notes/dailynotes",
-    default_tags = { "daily-notes" },
-    -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
-    template = "templates/dailytemplate"
-  },
     },
 
     -- see below for full list of options 👇

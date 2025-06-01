@@ -21,22 +21,22 @@
   ];
 
 
-    gtk = {
-     enable = true;
-        theme = {
-          name = "rose-pine";
-          package = pkgs.rose-pine-gtk-theme;
-        };
-    };
-
-    qt = {
-        enable = true;
-        platformTheme.name = "gtk2";
-        style = {
-        name = "rose-pine";
-        package = pkgs.rose-pine-gtk-theme;
-        };
-    };
+#    gtk = {
+#     enable = true;
+#        theme = {
+#          name = "rose-pine";
+#          package = pkgs.rose-pine-gtk-theme;
+#        };
+#    };
+#
+#    qt = {
+#        enable = true;
+#        platformTheme.name = "gtk2";
+#        style = {
+#        name = "rose-pine";
+#        package = pkgs.rose-pine-gtk-theme;
+#        };
+#    };
 
   dconf = {
     enable = true;

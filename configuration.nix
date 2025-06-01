@@ -9,6 +9,8 @@
   # Bootloader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
+    boot.loader.timeout = 0;
+    boot.plymouth.enable = true;
 
     networking.hostName = "nixos"; 
     time.timeZone = "America/Chicago";
@@ -20,6 +22,8 @@
     #media-session.enable = true;
     hardware.bluetooth.enable = true; # enables support for Bluetooth
     hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+    hardware.graphics.enable = true;
+    hardware.graphics.enable32Bit = true;
     services.blueman.enable = true;
 
     services = {
@@ -86,6 +90,7 @@
       ghostty
       tmux
       mpv
+      runelite
       vlc
       obsidian
       discord
@@ -97,7 +102,7 @@
       impression
       inputs.zen-browser.packages."${system}".specific
       menulibre #menu editor
-      lutris
+      lutris 
       syncthing
       gh
       android-tools #Supernote Sideloading
@@ -105,6 +110,9 @@
       hunspell #spellcheck
       themechanger
       ];
+
+
+
 
       programs.steam.enable = true;
       programs.kdeconnect.enable = true;
