@@ -89,10 +89,10 @@
       foot
       ghostty
       tmux
-      mpv
       runelite
       vlc
       obsidian
+      obs-studio
       discord
       spotify
       syncthing
@@ -100,7 +100,6 @@
       gimp-with-plugins
       anki
       impression
-      inputs.zen-browser.packages."${system}".specific
       menulibre #menu editor
       lutris 
       syncthing
@@ -108,7 +107,7 @@
       android-tools #Supernote Sideloading
       libreoffice-qt6-fresh
       hunspell #spellcheck
-      themechanger
+      inputs.zen-browser.packages."${system}".default
       ];
 
 
@@ -116,6 +115,21 @@
 
       programs.steam.enable = true;
       programs.kdeconnect.enable = true;
+        programs.uwsm = {
+            enable = true;
+            waylandCompositors = {
+                hyprland = {
+                    prettyName = "Hyprland";
+                    comment = "Hyprland compositor managed by UWSM";
+                    binPath = "/run/current-system/sw/bin/Hyprland";
+                };
+            };
+        };
+        programs.hyprland = {
+            enable = true;
+            withUWSM = true;
+            xwayland.enable = true;
+        };
 
       # Enable the OpenSSH daemon.
       # services.openssh.enable = true;

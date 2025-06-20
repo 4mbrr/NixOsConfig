@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Hyprland (with UWSM)
+Comment=Hyprland , UWSM session
+
+# either full command line with metadata and executable
+Exec=uwsm start hyprland 
+
+
+DesktopNames=mycompositor;mylib
+Type=Application

@@ -1,21 +1,21 @@
-{ config, pkgs, lib, options, ... }:
+{ config, pkgs, lib, options, inputs, ... }:
 
 {
-  lib.mkForce = true;
   home.username = "amber";
-  home.homeDirectory = lib.mkForce "/home/amber";
+  home.homeDirectory = "/home/amber";
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
-  home.packages = [
-    pkgs.hyprland
-    pkgs.wofi
-    pkgs.yt-dlp
-    pkgs.youtube-tui
-    pkgs.pywal
-    pkgs.wl-clipboard
-    pkgs.protonvpn-gui
 
-    (pkgs.writeShellScriptBin "vgrab" ''
+
+  home.packages = with pkgs; [
+#    hyprland
+    wofi
+    yt-dlp
+    youtube-tui
+    pywal
+    wl-clipboard
+    protonvpn-gui
+    (writeShellScriptBin "vgrab" ''
       yt-dlp -o "%(title)s.%(ext)s" -f "bv*[height<=1080]+ba/b[height<=1920]" -P "~/Downloads" $1
      '')
   ];
@@ -58,6 +58,7 @@
     ".config/nvim/lua/plugins/vim-tmux-navigator.lua".source = ./nvim/lua/plugins/vim-tmux-navigator.lua;
     ".config/nvim/lua/plugins/telescope.lua".source = ./nvim/lua/plugins/telescope.lua;
     ".config/nvim/lua/plugins/lsp.lua".source = ./nvim/lua/plugins/lsp.lua;
+    "/usr/share/wayland-sessions/hyprland.desktop".source = ./desktopentry/hyprland.desktop;
   };
 
   # Home Manager can also manage your environment variables through
@@ -76,24 +77,16 @@
   #
   #  /etc/profiles/per-user/amber/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-     EDITOR = "code";
-  };
+    home.sessionVariables = {
+        EDITOR = "nvim";
+    };
 
   # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
-  programs.git = {
-    enable = true;
-    userName  = "Amber";
-    userEmail = "uhjk5476@gmail.com";
-    extraConfig = {
-      credential.helper = "${
-          pkgs.git.override { withLibsecret = true; }
-        }/bin/git-credential-libsecret";
-    };
+    programs.home-manager.enable = true;
+    programs.git = {
+        enable = true;
+        userName  = "Amber";
+        userEmail = "uhjk5476@gmail.com";
   };
-  
 
-  
 }
