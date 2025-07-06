@@ -1,11 +1,12 @@
 {
-  description = "My first flake";
+  description = "My flake :)";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-25.05";
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    quickshell.url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
   };
   # shorthand nixpkgs.url = "nixpkgs/nixos-24.05";
   outputs = { nixpkgs, home-manager, ... }@inputs:

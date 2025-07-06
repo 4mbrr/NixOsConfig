@@ -108,6 +108,7 @@
       libreoffice-qt6-fresh
       hunspell #spellcheck
       inputs.zen-browser.packages."${system}".default
+      inputs.quickshell.packages."${system}".default
       ];
 
 
