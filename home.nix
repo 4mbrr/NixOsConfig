@@ -59,6 +59,7 @@
     ".config/nvim/lua/plugins/telescope.lua".source = ./nvim/lua/plugins/telescope.lua;
     ".config/nvim/lua/plugins/lsp.lua".source = ./nvim/lua/plugins/lsp.lua;
     "/usr/share/wayland-sessions/hyprland.desktop".source = ./desktopentry/hyprland.desktop;
+    ".config/quickshell/testbar/shell.qml".source = ./quickshell/testbar/shell.qml;
   };
 
   # Home Manager can also manage your environment variables through
