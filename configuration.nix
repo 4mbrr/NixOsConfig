@@ -94,12 +94,14 @@
       obsidian
       obs-studio
       discord
+      blender
       spotify
       syncthing
       neovim
       gimp-with-plugins
       anki
       impression
+      waybar
       menulibre #menu editor
       lutris 
       syncthing
