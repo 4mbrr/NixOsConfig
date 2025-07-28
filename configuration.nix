@@ -37,6 +37,7 @@
             dataDir = "/home/amber";  # default location for new folders
             configDir = "/home/amber/.config/syncthing";
           };
+        flatpak.enable = true;
     };
 
     environment.gnome.excludePackages = (with pkgs; [
