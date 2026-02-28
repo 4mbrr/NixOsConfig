@@ -84,7 +84,6 @@
       gtk4
       glib
       # applications
-      river
       ungoogled-chromium
       vscode
       foot
