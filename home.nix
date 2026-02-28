@@ -37,7 +37,6 @@
 #        package = pkgs.rose-pine-gtk-theme;
 #        };
 #    };
-
   dconf = {
     enable = true;
     settings = {
